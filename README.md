@@ -478,7 +478,7 @@ pid32 create(
 
 ## **Shell**
 
-为了能够运行`xinu shell`, 在`shell`创建进程之后, 需要将参数传入其栈空间. 实现的逻辑和上面在`create`中实现的逻辑是相似的. 这里并为对`shell.c`做太多的修改.  保留它给新进程传递参数的方式:
+为了能够运行`xinu shell`, 在`shell`创建进程之后, 需要将参数传入其栈空间. 实现的逻辑和上面在`create`中实现的逻辑是相似的. 这里并未对`shell.c`做太多的修改.  保留它给新进程传递参数的方式:
 
 ```c
 		child = create(cmdtab[j].cfunc,
@@ -606,7 +606,7 @@ status	addargs(
 
 则如果实现了堆空间的`sbrk`则几乎与`malloclab`的实验要求一致. 我的代码稍作修改便能用于这边的堆内存管理.
 
-详细实现的过程请看我的[另一篇实验报告](malloc.pdf).
+详细实现的过程请看我的[另一篇实验报告](malloc.pdf)和[完成的malloclab](<https://github.com/driftee/malloclab>).
 
 需要有额外的一些要求, 以配合页式内存管理. 比如
 
