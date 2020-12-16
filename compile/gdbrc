@@ -1,0 +1,26 @@
+set disassembly-flavor intel
+target remote:1234
+file xinu.elf
+# b InitializeVirtualMemory
+# b initialize.c:95
+# b *0x1027c
+# b meminit.c:359
+# b create.c:101
+# b create
+# b ctxsw
+b Xtrap
+# b resched.c:44
+# b free_page
+# b main
+# b main.c:13
+# b shell.c:107
+
+# b create.c:80
+# b shell
+# b shell.c:306
+# b create.c:50 if funcaddr == shell
+# b allocmem
+# b deallocmem
+# b set_free_boundary_tag
+# b delete_free_block
+# b assign_free_block
